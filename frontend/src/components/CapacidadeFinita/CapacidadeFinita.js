@@ -1,10 +1,10 @@
 export default {
-  name: 'index',
+  name: 'capacidade-finita',
   components: {},
   props: [],
   data () {
     return {
-
+      model: {}
     }
   },
   computed: {
@@ -14,6 +14,8 @@ export default {
 
   },
   methods: {
-
+    calcular(){
+      
+    }
   }
 }

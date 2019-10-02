@@ -1,6 +1,7 @@
 <template>
   <div class="container-index">
-    <Index/>
+    <Index class="component"/>
+    <router-view class="routes"/>
   </div>
 </template>
 
@@ -20,5 +21,16 @@ export default {
 .container-index{
   display: table;
   width: 100%;
+  .component{
+    float: left;
+    width: 500px;
+  }
+  .routes{
+    position: relative;
+    top: 25px;
+    display: table;
+    float: left;
+    min-width: 700px;
+  }
 }
 </style>

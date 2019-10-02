@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view class="routes"/>
+    <router-view/>
   </div>
 </template>
 
@@ -32,13 +32,6 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color:#4c4d5a;
-  .routes{
-    position: relative;
-    top: 20px;
-    display: table;
-    width: 80%;
-    margin: 0 auto;
-  }
 }
 </style>
 
