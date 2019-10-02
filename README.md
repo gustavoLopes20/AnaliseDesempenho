@@ -8,7 +8,7 @@
 <h3> Tecnologias </h3><br>
  - Framework VueJS 3 (Html, CSS, JavaScript). sobre o framework: https://vuejs.org/
 
-</h3> Projeto </h3><br>
+<h3> Projeto </h3><br>
   1 - Download do NodeJs LTS - https://nodejs.org/en/download/<br>
   2 - Instalar VueJs 3.x com este comando: <br>
     $ npm install -g @vue/cli <br>
