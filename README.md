@@ -7,6 +7,7 @@
     obedecendo a notação de Kendall como entrada para identificação do tipo da fila.<br>
 <h3> Tecnologias </h3>
  - Framework VueJS 3 (Html, CSS, JavaScript). sobre o framework: https://vuejs.org/
+ - Vootstrap framework: https://getbootstrap.com/
 
 <h3> Projeto </h3>
   1 - Download do NodeJs LTS - https://nodejs.org/en/download/<br>
