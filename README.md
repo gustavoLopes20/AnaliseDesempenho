@@ -6,8 +6,8 @@
     O software consiste em análise de filas. Para isso, foi levado em conta o tipo de fila a ser analido, conforme o livro estudado na disciplina (Avaliação de Desempenho de Sistemas Computacionais - Thienne De Melo e Silva Mesquita Johnson; Mauro Margalho Coutinho)<br>
     obedecendo a notação de Kendall como entrada para identificação do tipo da fila.<br>
 <h3> Tecnologias </h3>
- - Framework VueJS 3 (Html, CSS, JavaScript). sobre o framework: https://vuejs.org/
- - Vootstrap framework: https://getbootstrap.com/
+ - Framework VueJS 3 (Html, CSS, JavaScript). sobre o framework: https://vuejs.org/ <br>
+ - Bootstrap framework: https://getbootstrap.com/
 
 <h3> Projeto </h3>
   1 - Download do NodeJs LTS - https://nodejs.org/en/download/<br>
