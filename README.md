@@ -11,8 +11,8 @@
 <h3> Projeto </h3>
   1 - Download do NodeJs LTS - https://nodejs.org/en/download/<br>
   2 - Instalar VueJs 3.x com este comando: <br>
-    &nbsp; $ npm install -g @vue/cli <br>
+    &nbsp; &nbsp; $ npm install -g @vue/cli <br>
   3 - Você pode verificar se possui a versão correta (3.x) com este comando:<br>
-    &nbsp; $ vue --version <br>
+    &nbsp; &nbsp; $ vue --version <br>
   4 - Para executar o projeto, navegue ate a pasta frontend e utilize o comando:<br>
-    $ npm run serve <br>
+    &nbsp; &nbsp; $ npm run serve <br>
