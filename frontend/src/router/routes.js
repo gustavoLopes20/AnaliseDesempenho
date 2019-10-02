@@ -2,7 +2,7 @@ export default [
     {
         path: '/index',
         name: 'index',
-        component: () => import('../components/Index/index.vue'),
+        component: () => import('../views/Index.vue'),
         meta: { 
             requiresAuth: false
         },

@@ -4,6 +4,9 @@ import router from './router/index'
 import AsyncComputed from 'vue-async-computed';
 import vSelect from 'vue-select'
 
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
 import { faHeart,faMinus,faPlus,faBarcode, faBars, faSearch, faUser, faShoppingBasket, faUserCircle, faChevronLeft, faChevronRight, faEnvelope, fas, faSpinner, faAlignLeft,  faAngleUp,faAngleDown, faFileInvoice, faArrowLeft, faArrowRight} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -15,6 +18,7 @@ dom.watch() // This will kick of the initial replacement of i to svg tags and co
 
 library.add(faHeart,faMinus,faPlus,faCcMastercard, faCcVisa,faBarcode, faInstagram, faAccessibleIcon,faComment,faWhatsapp ,faTwitter, faBars, faSearch, faUser, faShoppingBasket, faUserCircle, faChevronLeft, faChevronRight, faEnvelope, fas, faSpinner, faAlignLeft, faHeart,faAngleUp,faAngleDown, faCreditCard, faFileInvoice, faArrowLeft, faArrowRight)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 
 Vue.config.productionTip = false
 Vue.component('v-select', vSelect)
