@@ -1,17 +1,35 @@
-<section class="populacao-finita-inf-serv">
+<section class="populacao-finita-inf-serv section-base">
   <h1>População Finita com infinitos servidores</h1>
   <form>
-      <div class="form-row">
-  
-        <div class="form-group col-md-4 col-sm-12 col-xs-12">
-          <label>Campo</label>
-          <input type="text" class="form-control" v-model="model.campo">
-        </div>
-     
+    <div class="form-row">
+
+      <div class="form-group col-md-4 col-sm-12 col-xs-12">
+        <label>Lambda (λ)</label>
+        <input type="number" class="form-control" v-model="model.Lambda">
       </div>
-      <div class="form-row"> <div class="form-group col-md-12"><button type="button" class="btn btn-success submit" @click="calcular">Enviar</button></div></div>
-    </form>
-  
-    <div class="resultado"></div>
+
+      <div class="form-group col-md-4 col-sm-12 col-xs-12">
+        <label>MI (μ)</label>
+        <input type="number" class="form-control" v-model="model.MI">
+      </div>
+
+      <div class="form-group col-md-4 col-sm-12 col-xs-12">
+          <label>M</label>
+          <input type="number" class="form-control" v-model="model.M">
+     </div>
+
+     <div class="form-group col-md-4 col-sm-12 col-xs-12">
+        <label>K</label>
+        <input type="number" class="form-control" v-model="model.K">
+      </div>
+   
+    </div>
+    <div class="form-row"> <div class="form-group col-md-12"><button type="button" class="btn btn-success submit" @click="calcular">Calcular</button></div></div>
+  </form>
+
+  <h3>Resultados</h3>
+  <div class="resultado">
+   <span><strong>N medio de clientes:</strong> <span class="blue">{{result}} cliente</span> <br></span>
+  </div>
 </section>
 

@@ -1,4 +1,4 @@
-import { MServers as Algorithm } from "../../core/backend";
+import * as Algorithm  from "../../core/backend";
 
 export default {
   name: 'populacao-finita-inf-serv',
@@ -6,7 +6,12 @@ export default {
   props: [],
   data () {
     return {
-      model: {}
+      model: {
+        Lambda : 0,
+        MI:0,
+        K : 0
+      },
+      result : 0
     }
   },
   computed: {
@@ -17,7 +22,7 @@ export default {
   },
   methods: {
     calcular(){
-      
+      this.result = Algorithm.FinitePopulationEndlessServers.AverageNumberBank(this.model.K, this.model.Lambda, this.model.MI);
     }
   }
 }

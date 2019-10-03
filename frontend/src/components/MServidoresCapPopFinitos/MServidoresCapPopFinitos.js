@@ -1,4 +1,4 @@
-import { MServers as Algorithm } from "../../core/backend";
+import * as Algorithm  from "../../core/backend";
 
 export default {
   name: 'm-servidores-cap-pop-finitos',
@@ -6,7 +6,15 @@ export default {
   props: [],
   data () {
     return {
-      model: {}
+      model: {
+        Lambda : 0,
+        MI:0,
+        K : 0,
+        P0 : 0,
+        B: 0,
+        M : 0
+      },
+      result : 0
     }
   },
   computed: {
@@ -17,7 +25,7 @@ export default {
   },
   methods: {
     calcular(){
-      
+      //this.NumMedUsr =  Algorithm.CapacityServersPopulation.ProbabilityNSystemUsers();
     }
   }
 }

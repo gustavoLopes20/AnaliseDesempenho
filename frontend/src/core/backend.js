@@ -67,81 +67,104 @@ class Summation {
 //Sistema clássico
 export class ClassicSystem {
 
+    lambda = 0;
+    mi = 0;
+    p = 0;
+    p0 = 0;
+    n = 0;
+
     //Taxa de chegada
     static ArrivalsFee(a) {
-        return division(a, 60).toFixed(2)
+        this.lambda = division(Number(a), 60);
+        return this.lambda;
     }
 
     //Taxa de serviço
     static ServiceCharge(a) {
-        return division(a, 60).toFixed(2)
+        this.mi = division(Number(a), 60);
+        return this.mi;
     }
 
     //Intensidade de tráfego
-    static TrafficIntensity(lambda, mi) {
-        return multiplication(division(lambda, mi), 100).toFixed(2)
+    static TrafficIntensity() {
+        this.p =  division(this.lambda, this.mi)
+        return (this.p * 100)
     }
 
     //Probabilidade do sistema está vazio
-    static EmptySystemProbability(p) {
-        return multiplication(subctration(1, p), 100).toFixed(2)
+    static EmptySystemProbability() {
+        this.p0 = multiplication(subctration(1, this.p), 100)
+        return this.p0
     }
 
     //Probabilidade de n pessoas estar usando o sistema
-    static ProbabilityUsingSystem(p, n) {
-        return multiplication(pow(p, n), (1 - p) * 100).toFixed(2)
+    static ProbabilityUsingSystem(n) {
+        this.n = Number(n);
+        return multiplication(multiplication(pow(this.p, this.n), this.p0),100)
     }
 
     //Probabilidade de n ou mais pessoas estar usando o sistema
-    static EqualUpperProbability(p, n) {
-        return multiplication(pow(p, n), 100).toFixed(2)
+    static EqualUpperProbability() {
+        return multiplication(pow(this.p, this.n), 100)
     }
 
     //Tempo médio de resposta
-    static AverageResponseTime(mi, p) {
-        return division(1, multiplication(mi, subctration(1, p))).toFixed(2)
+    static AverageResponseTime() {
+        return division(1, multiplication(this.mi, subctration(1, this.p)))
     }
 
     //Número médio de usuários
-    static AverageNumberUsers(p) {
-        return division(p, (1 - p)).toFixed(2)
+    static AverageNumberUsers() {
+        return (division(this.p, (1 - this.p)) * 100).toFixed(0);
     }
 
     //Solicitações médias no sistema
-    static AverageSystemRequests(p) {
-        return division(pow(p, 2), subctration(1, p)).toFixed(2)
+    static AverageSystemRequests() {
+        return division(pow(this.p, 2), subctration(1, this.p))
     }
 }
 
 export class MServers extends Summation {
-    //Probabilidade do servidor não ter requisições
-    static NoRequest(m, p) {
+    p = 0;
+    m = 0;
+    p0 = 0;
 
-        let respSummation = super.summationMServers(0, m - 1, m, p, (m, n, p) => {
+    static CalcP(lambda,m,mi){
+        this.p = division(lambda,multiplication(m,mi))
+        this.m = m;
+    }
+    //Probabilidade do servidor não ter requisições
+    static NoRequest() {
+
+        let respSummation = super.summationMServers(0, this.m - 1, this.m, this.p, (m, n, p) => {
             return division(pow(multiplication(m, p), n), factorial(n))
         }, 0)
 
-        return division(1, sum(division(pow(multiplication(m, p), m), multiplication(factorial(m), subctration(1, p))), respSummation)).toFixed(2)
-
+        this.p0 = division(1, sum(division(pow(multiplication(this.m, this.p), this.m), multiplication(factorial(this.m), subctration(1, this.p))), respSummation))
+        return this.p0;
     }
 
     //Probabilidade dos servidores estarem ocupados
-    static BusyServers(m, p) {
-        return multiplication(this.NoRequest(m, p), division(pow(multiplication(m, p), m), multiplication(factorial(m), subctration(1, p))))
+    static BusyServers() {
+        return multiplication(this.NoRequest(this.m, this.p), division(pow(multiplication(this.m, this.p), this.m), multiplication(factorial(this.m), subctration(1, this.p))))
     }
 
     //Tempo medio de resposta
-    static AverageResponseTime(m, p, u) {
-
-        return multiplication(multiplication(division(1, 12), division(0.21, multiplication(m, subctration(1, p)))), 100)
+    static AverageResponseTime() {
+        return multiplication(multiplication(division(1, this.m), division(this.BusyServers(), multiplication(this.m, subctration(1, this.p)))), 100)
     }
 }
 
 export class MMInfiniteServes {
     //Media de usuários no sistema
     static MediaUsersSystem(p0, lambda, mi, n) {
-        let p = division(lambda, mi)
+        p0 = Number(p0)
+        lambda = Number(lambda)
+        mi = Number(mi)
+        n = Number(n)
 
+        let p = division(lambda, mi)
+        
         return multiplication(division(pow(p, n), factorial(n)), p0)
     }
 
@@ -186,6 +209,9 @@ export class FinitePopulationServer {
 export class FinitePopulationEndlessServers {
     // Número médio de clientes no sistema de banco dedados
     static AverageNumberBank(k, lambda, mi) {
+        k = Number(k)
+        lambda = Number(lambda)
+        mi = Number(mi)
         return division(multiplication(k, division(lambda, mi)), sum(1, division(lambda, mi)))
     }
 }
@@ -193,6 +219,6 @@ export class FinitePopulationEndlessServers {
 export class CapacityServersPopulation {
     //Propabilidade de N usuários estarem no sistema
     static ProbabilityNSystemUsers(lambda, mi, m, n, b, k, p0) {
-        return multiplication(multiplication(pow(division(lambda, mi), n), multiplication(division(k, n), p0)), 100).toFixed(2)
+        return multiplication(multiplication(pow(division(lambda, mi), n), multiplication(division(k, n), p0)), 100)
     }
 }

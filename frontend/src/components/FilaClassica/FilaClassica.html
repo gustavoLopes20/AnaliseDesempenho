@@ -1,18 +1,40 @@
-<section class="fila-classica">
+<section class="fila-classica section-base">
   <h1>Fila Clássica</h1>
 
   <form>
     <div class="form-row">
 
       <div class="form-group col-md-4 col-sm-12 col-xs-12">
-        <label>Campo</label>
-        <input type="text" class="form-control" v-model="model.campo">
+        <label>Lambda (λ)</label>
+        <input type="number" class="form-control" v-model="model.Lambda">
       </div>
+
+      <div class="form-group col-md-4 col-sm-12 col-xs-12">
+        <label>MI (μ)</label>
+        <input type="number" class="form-control" v-model="model.MI">
+      </div>
+
+      <div class="form-group col-md-4 col-sm-12 col-xs-12">
+          <label>N° Usuários</label>
+          <input type="number" class="form-control" v-model="model.Usr">
+     </div>
    
     </div>
-    <div class="form-row"> <div class="form-group col-md-12"><button type="button" class="btn btn-success submit" @click="calcular">Enviar</button></div></div>
+    <div class="form-row"> <div class="form-group col-md-12"><button type="button" class="btn btn-success submit" @click="calcular">Calcular</button></div></div>
   </form>
 
-  <div class="resultado"></div>
+  <h3>Resultados</h3>
+  <div class="resultado">
+   <span><strong>Taxa Chegada:</strong> <span class="blue">{{result.lambda}} req/s</span><br></span>
+   <span><strong>Taxa de Serviço:</strong> <span class="blue">{{result.mi}} req/s</span><br></span>
+   <span><strong>Intensidade de Tráfego:</strong> <span class="blue">{{result.intensidade}}%</span><br></span>
+   <span><strong>Probabilidade de nenhum usuarios no sistema:</strong> <span class="blue">{{result.probUsrZero}}%</span><br></span>
+   <span><strong>Probabilidade de N usuarios no sistema:</strong> <span class="blue">{{result.probUsrN}}%</span><br></span>
+   <span><strong>Probabilidade de N ou mais usuarios no sistema:</strong> <span class="blue">{{result.probNMais}}%</span><br></span>
+   <span><strong>Tempo Médio de Resposta:</strong> <span class="blue">{{result.tempoMedResp}}s</span><br></span>
+   <span><strong>N° Médio de Usuários:</strong> <span class="blue">{{result.numMedUsr}}req</span><br></span>
+   <span><strong>N° Médio de Requisições na Fila:</strong> <span class="blue">{{result.numMedReq}}req</span><br></span>
+
+  </div>
 
 </section>

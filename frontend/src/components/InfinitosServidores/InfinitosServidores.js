@@ -1,4 +1,4 @@
-import { MServers as Algorithm } from "../../core/backend";
+import * as Algorithm  from "../../core/backend";
 
 export default {
   name: 'infinitos-servidores',
@@ -6,7 +6,15 @@ export default {
   props: [],
   data () {
     return {
-      model: {}
+      model: {
+        Lambda : 0,
+        M : 0,
+        MI: 0,
+        P0: 0
+      },
+      result : { 
+        NumMedUsr: 0,
+      }
     }
   },
   computed: {
@@ -17,7 +25,7 @@ export default {
   },
   methods: {
     calcular(){
-      
+      this.NumMedUsr =  Algorithm.MMInfiniteServes.MediaUsersSystem(this.model.P0, this.model.Lambda, this.model.MI, this.model.M);
     }
   }
 }
