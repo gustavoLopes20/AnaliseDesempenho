@@ -207,7 +207,7 @@ export class FinitePopulationServer {
 }
 
 export class FinitePopulationEndlessServers {
-    // Número médio de clientes no sistema de banco dedados
+    // Número médio de clientes no sistema de banco de dados
     static AverageNumberBank(k, lambda, mi) {
         k = Number(k)
         lambda = Number(lambda)

@@ -9,7 +9,8 @@ export default {
         Lambda :0,
         M : 0,
         MI: 1,
-        K: 0
+        K: 0,
+        n:0
       },
       result : 0
     }
@@ -22,7 +23,7 @@ export default {
   },
   methods: {
     calcular(){
-      //this.result = Algorithm.FinitePopulationServer.MediaRequests(this.model.M, this.Model, lambda, mi, k);
+      this.result = Algorithm.FinitePopulationServer.MediaRequests(this.model.M, this.Model, lambda, mi, k,n);
     }
   }
 }

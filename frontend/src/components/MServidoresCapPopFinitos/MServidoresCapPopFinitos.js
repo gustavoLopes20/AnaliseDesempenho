@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     calcular(){
-      //this.NumMedUsr =  Algorithm.CapacityServersPopulation.ProbabilityNSystemUsers();
+      this.NumMedUsr =  Algorithm.CapacityServersPopulation.ProbabilityNSystemUsers();
     }
   }
 }
